@@ -14,7 +14,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 from blog_articles import ARTICLES  # noqa: E402
 
 SITE = "https://backtosource-mentoring.com"
-NEWSLETTER = "https://bol-weekly-note-esther.netlify.app/?utm_source=site&utm_medium=blog"
+NEWSLETTER = "/en/newsletter?utm_source=site&utm_medium=blog"
 APP = "https://app.backtosource-mentoring.com/?utm_source=site&utm_medium=blog"
 
 L = {
@@ -145,7 +145,7 @@ def cta_cards(lang):
   <article class="card">
     <h3>{c['nl_t']}</h3>
     <p>{c['nl_p']}</p>
-    <a class="link" href="{NEWSLETTER}&utm_campaign={lang}" target="_blank" rel="noopener">{c['nl_b']} ↗</a>
+    <a class="link" href="{'/newsletter' if lang == 'he' else '/en/newsletter'}?utm_source=site&utm_medium=blog&utm_campaign={lang}">{c['nl_b']}</a>
   </article>
 </div>"""
 
